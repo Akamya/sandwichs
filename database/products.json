@@ -1,0 +1,388 @@
+{
+    "Boissons froides": [
+        { "nom": "Coca 33 cl", "prix": "2,00 €" },
+        { "nom": "Coca Light 33 cl", "prix": "2,00 €" },
+        { "nom": "Coca Zéro 33 cl", "prix": "2,00 €" },
+        { "nom": "Fanta 33 cl", "prix": "2,00 €" },
+        { "nom": "Sprite 33 cl", "prix": "2,00 €" },
+        { "nom": "Eau plate 50 cl", "prix": "3,00 €" },
+        { "nom": "Eau pétillante 50 cl", "prix": "3,00 €" },
+        { "nom": "Fuse Tea 40 cl", "prix": "3,00 €" },
+        { "nom": "Tonic 33 cl", "prix": "2,50 €" },
+        { "nom": "Agrume 33 cl", "prix": "2,50 €" },
+        { "nom": "Canada Dry 33 cl", "prix": "2,50 €" },
+        { "nom": "Gini 33 cl", "prix": "2,50 €" },
+        { "nom": "Tropico 33 cl", "prix": "2,50 €" },
+        { "nom": "Ice Tea 33 cl", "prix": "2,50 €" },
+        { "nom": "Ice Tea Pêche 33 cl", "prix": "2,50 €" },
+        { "nom": "Ice Tea Green 33 cl", "prix": "2,50 €" },
+        { "nom": "Jus de fruits", "prix": "2,50 €" },
+        { "nom": "Red Bull", "prix": "3,00 €" },
+        { "nom": "Jupiler", "prix": "3,00 €" }
+    ],
+    "Boissons chaudes": [
+        { "nom": "Café", "prix": "2,00 €" },
+        { "nom": "Thé au choix", "prix": "2,00 €" },
+        { "nom": "Déca", "prix": "2,00 €" },
+        { "nom": "Cappuccino", "prix": "2,50 €" },
+        { "nom": "Chocolat chaud", "prix": "2,50 €" }
+    ],
+    "Sandwiches Classiques": [
+        {
+            "nom": "Jambon &/ou fromage",
+            "prix_normal": "3,20 €",
+            "prix_grand": "4,00 €"
+        },
+        { "nom": "Bacon", "prix_normal": "3,90 €", "prix_grand": "4,70 €" },
+        {
+            "nom": "Boulette maison",
+            "prix_normal": "3,90 €",
+            "prix_grand": "4,70 €"
+        },
+        {
+            "nom": "Jambon d'Ardennes",
+            "prix_normal": "3,90 €",
+            "prix_grand": "4,70 €"
+        },
+        {
+            "nom": "Jambon italien",
+            "prix_normal": "3,90 €",
+            "prix_grand": "4,70 €"
+        },
+        {
+            "nom": "Saucisson italien",
+            "prix_normal": "3,90 €",
+            "prix_grand": "4,70 €"
+        },
+        {
+            "nom": "Filet de poulet",
+            "prix_normal": "3,90 €",
+            "prix_grand": "4,70 €"
+        },
+        { "nom": "Rosbif", "prix_normal": "4,00 €", "prix_grand": "4,80 €" },
+        {
+            "nom": "Américain préparé",
+            "prix_normal": "4,00 €",
+            "prix_grand": "4,80 €"
+        },
+        {
+            "nom": "Salade de viande",
+            "prix_normal": "4,00 €",
+            "prix_grand": "4,80 €"
+        },
+        {
+            "nom": "Salade suisse",
+            "prix_normal": "4,00 €",
+            "prix_grand": "4,80 €"
+        },
+        {
+            "nom": "Poulet curry, andalouse",
+            "prix_normal": "4,00 €",
+            "prix_grand": "4,80 €"
+        },
+        {
+            "nom": "Thon mayonnaise, piquant, cocktail",
+            "prix_normal": "3,20 €",
+            "prix_grand": "4,00 €"
+        },
+        {
+            "nom": "Thon portugais",
+            "prix_normal": "3,90 €",
+            "prix_grand": "4,70 €"
+        },
+        {
+            "nom": "Salade de crabe",
+            "prix_normal": "4,00 €",
+            "prix_grand": "4,80 €"
+        },
+        {
+            "nom": "Salade de langoustines cocktail",
+            "prix_normal": "3,90 €",
+            "prix_grand": "4,70 €"
+        },
+        {
+            "nom": "Salade de crevettes grises",
+            "prix_normal": "4,90 €",
+            "prix_grand": "5,70 €"
+        },
+        {
+            "nom": "Scampis à l’ail",
+            "prix_normal": "4,90 €",
+            "prix_grand": "5,70 €"
+        },
+        {
+            "nom": "Saumon fumé en tranches",
+            "prix_normal": "4,90 €",
+            "prix_grand": "5,70 €"
+        }
+    ],
+    "Sandwiches Créatifs": [
+        {
+            "nom": "CLUB Maison",
+            "prix": "4,50 €",
+            "description": [
+                "Jambon",
+                "Fromage",
+                "Assortiment de crudités",
+                "Œuf"
+            ]
+        },
+        {
+            "nom": "MARTINO Maison",
+            "prix": "4,50 €",
+            "description": [
+                "Américain préparé",
+                "Martino maison (cornichons, anchois)"
+            ]
+        },
+        {
+            "nom": "Le Chèvre",
+            "prix": "4,50 €",
+            "description": ["Fromage de chèvre", "Bacon braisé", "Miel", "Thym"]
+        },
+        {
+            "nom": "SUISSE",
+            "prix": "4,50 €",
+            "description": [
+                "Fromage fondu",
+                "Œuf de dinde",
+                "Tomates",
+                "Roquette"
+            ]
+        },
+        {
+            "nom": "Le PANIDEL",
+            "prix": "4,50 €",
+            "description": [
+                "Bacon grillé",
+                "Salade de thon",
+                "Câpres",
+                "Oignons frais"
+            ]
+        },
+        {
+            "nom": "ITALIEN",
+            "prix": "4,90 €",
+            "description": [
+                "Jambon de Parme",
+                "Mozzarella",
+                "Tomate",
+                "Origan",
+                "Huile d'olive"
+            ]
+        },
+        {
+            "nom": "Le CESAR",
+            "prix": "4,90 €",
+            "description": [
+                "Poulet",
+                "Parmesan",
+                "Tomates séchées",
+                "Sauce moutarde"
+            ]
+        },
+        {
+            "nom": "Le Carpaccio",
+            "prix": "5,00 €",
+            "description": [
+                "Carpaccio de bœuf",
+                "Parmesan",
+                "Roquette",
+                "Tomates séchées"
+            ]
+        },
+        {
+            "nom": "Le Fermier",
+            "prix": "5,00 €",
+            "description": ["Jambon blanc", "Brie"]
+        },
+        {
+            "nom": "Le NORDIQUE",
+            "prix": "5,00 €",
+            "description": [
+                "Saumon fumé",
+                "Oignons frais",
+                "Sauce miel-moutarde",
+                "Aneth"
+            ]
+        },
+        {
+            "nom": "Végétarien",
+            "prix": "5,00 €",
+            "description": ["Assortiment de crudités", "Vinaigrette maison"]
+        },
+        {
+            "nom": "GOURMAND",
+            "prix": "5,00 €",
+            "description": [
+                "Américain maison",
+                "Crudités",
+                "Œuf",
+                "Sauce au choix"
+            ]
+        },
+        {
+            "nom": "César Poulet",
+            "prix": "4,50 €",
+            "description": [
+                "Crudités",
+                "Poulet",
+                "Parmesan",
+                "Tomates",
+                "Sauce moutarde"
+            ]
+        },
+        {
+            "nom": "BICKY",
+            "prix": "4,50 €",
+            "description": [
+                "Américain préparé",
+                "Sauce Bicky",
+                "Crudités",
+                "Oignons frits"
+            ]
+        },
+        {
+            "nom": "NIÇOIS",
+            "prix": "4,50 €",
+            "description": [
+                "Thon",
+                "Salade",
+                "Œuf",
+                "Tomates",
+                "Oignons frais",
+                "Concentré d’anchois"
+            ]
+        },
+        {
+            "nom": "AMERICAIN",
+            "prix": "4,90 €",
+            "description": [
+                "Américain préparé",
+                "Cornichons",
+                "Crudités",
+                "Œuf"
+            ]
+        },
+        {
+            "nom": "Le Grec",
+            "prix": "4,90 €",
+            "description": [
+                "Poulet mariné",
+                "Aubergines",
+                "Olives noires",
+                "Tomates séchées",
+                "Feta"
+            ]
+        },
+        {
+            "nom": "Indien",
+            "prix": "5,00 €",
+            "description": ["Poulet au curry", "Oignons frais", "Salade verte"]
+        },
+        {
+            "nom": "L’ITALIENNE",
+            "prix": "5,00 €",
+            "description": [
+                "Jambon de Parme",
+                "Salade verte",
+                "Tomates séchées"
+            ]
+        },
+        {
+            "nom": "Le Portugais",
+            "prix": "5,00 €",
+            "description": [
+                "Thon",
+                "Œufs",
+                "Maïs",
+                "Mayonnaise",
+                "Sauce piquante"
+            ]
+        },
+        {
+            "nom": "L’Ostendaise",
+            "prix": "5,00 €",
+            "description": ["Filet américain", "Salade verte", "Cornichons"]
+        },
+        {
+            "nom": "L’Orientale",
+            "prix": "5,00 €",
+            "description": [
+                "Houmous",
+                "Falafel",
+                "Salade verte",
+                "Carottes",
+                "Sauce yaourt"
+            ]
+        }
+    ],
+    "Paninis": [
+        {
+            "nom": "Jambon et fromage",
+            "prix": "4,90 €",
+            "description": ["Jambon", "Fromage"]
+        },
+        {
+            "nom": "Chèvre",
+            "prix": "5,00 €",
+            "description": ["Fromage de chèvre", "Miel", "Thym"]
+        },
+        {
+            "nom": "Fermier",
+            "prix": "5,50 €",
+            "description": ["Jambon blanc", "Brie"]
+        },
+        {
+            "nom": "Nordique",
+            "prix": "5,50 €",
+            "description": [
+                "Saumon fumé",
+                "Oignons frais",
+                "Sauce miel-moutarde",
+                "Aneth"
+            ]
+        },
+        {
+            "nom": "Caprese",
+            "prix": "5,50 €",
+            "description": ["Mozzarella", "Tomates", "Basilic", "Huile d'olive"]
+        },
+        {
+            "nom": "Hawaïen",
+            "prix": "5,50 €",
+            "description": ["Jambon", "Ananas", "Fromage"]
+        },
+        {
+            "nom": "Napolitain",
+            "prix": "5,50 €",
+            "description": ["Salami", "Mozzarella", "Tomates", "Origan"]
+        },
+        {
+            "nom": "Parmesan",
+            "prix": "5,50 €",
+            "description": ["Jambon de Parme", "Parmesan", "Roquette"]
+        },
+        {
+            "nom": "Estival",
+            "prix": "5,50 €",
+            "description": [
+                "Poulet mariné",
+                "Aubergines grillées",
+                "Tomates séchées",
+                "Feta"
+            ]
+        }
+    ],
+    "Cornets de Pâtes": [
+        { "nom": "Bolognaise", "prix": "5,00 €" },
+        { "nom": "Jambon et fromage", "prix": "5,00 €" },
+        { "nom": "Carbonara", "prix": "5,00 €" },
+        { "nom": "Aux 4 fromages", "prix": "5,00 €" },
+        { "nom": "Pesto vert", "prix": "5,00 €" },
+        { "nom": "Tomate crème basilic", "prix": "5,00 €" },
+        { "nom": "Crème à la truffe et parmesan", "prix": "6,50 €" },
+        { "nom": "Saumon fumé crème-tomate", "prix": "6,50 €" },
+        { "nom": "Saumon fumé crème-parmesan", "prix": "6,50 €" }
+    ]
+}

@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sandwich_orders', function (Blueprint $table) {
+        Schema::create('sandwich_order_products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('sandwich_users')->onDelete('cascade');
-            $table->boolean('payment');
-            $table->string('status')->nullable();
+            $table->foreignId('order_id')->constrained('sandwich_orders')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained('sandwich_products')->onDelete('cascade');
+            $table->integer('quantity');
             $table->timestamps();
             $table->timestampTz('published_at')->nullable();
         });
-
-
-
     }
 
     /**
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sandwich_orders');
+        Schema::dropIfExists('sandwich_order_products');
     }
 };
