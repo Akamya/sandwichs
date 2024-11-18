@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('sandwich_products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('prix')->nullable();
-            $table->integer('prix_normal')->nullable();
-            $table->integer('prix_grand')->nullable();
+            $table->float('prix')->nullable();
+            $table->float('prix_normal')->nullable();
+            $table->float('prix_grand')->nullable();
             $table->string('categorie');
             $table->string('description')->nullable();
             $table->string('img')->nullable();

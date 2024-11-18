@@ -32,16 +32,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::factory()->create([
-            'first-name' => 'admin',
-            'last-name' => 'admin',
+            'first_name' => 'admin',
+            'last_name' => 'admin',
             'email' => 'admin@example.com',
             'role_id' => 1,
         ]);
 
         // On crée notre utilisateur de test qui sera maintenant un utilisateur lambda
         User::factory()->create([
-            'first-name' => 'user',
-            'last-name' => 'user',
+            'first_name' => 'user',
+            'last_name' => 'user',
             'email' => 'test@example.com',
             'role_id' => 3,
         ]);
