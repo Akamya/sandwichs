@@ -65,10 +65,6 @@
                                 class="text-gray-500 font-bold py-2 px-4 rounded hover:bg-gray-200 transition">Ajouter un
                                 produit</a>
                         </div>
-
-                        <div class="mt-4">
-                            {{ $products->links() }}
-                        </div>
                     </div>
                 </div>
             </div>
