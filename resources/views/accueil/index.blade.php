@@ -1,6 +1,7 @@
 <x-guest-layout>
     <script>
-        const panier = [];
+         const panier = JSON.parse(localStorage.getItem("panier")) || [];
+
         function changePrice(size, sandwichID){
             // console.log('sandwichID', sandwichID)
             const prixGrand = document.querySelector(`#prix-${sandwichID}-grand`);
@@ -54,17 +55,17 @@
     <div class="space-y-12">
         <!-- Boissons froides -->
         <div class="space-y-4">
-            <h2 class="text-2xl font-semibold text-gray-800">Boissons froides</h2>
+            <h2 class="text-2xl font-semibold text-gray-800" >Boissons froides</h2>
             <ul class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
                 @foreach($products->filter(function ($element) { return $element->categorie == 'Boissons froides';}) as $product)
                     <li>
                         <a class="flex flex-col bg-white rounded-lg shadow-lg p-6 w-full">
                             <div class="flex items-center justify-between mb-4">
-                                <p class="text-xl font-semibold text-gray-700">{{ $product->name }}</p>
+                                <p class="text-xl font-semibold text-gray-700" id="name-{{ $product->id }}">{{ $product->name }}</p>
                             </div>
                             <p class="text-sm text-gray-500">{{ $product->description ?? 'Description du produit' }}</p>
                             <div class="mt-4 flex justify-between items-center text-lg font-medium text-gray-700">
-                                <span>{{ $product->prix ?? 'Prix non défini' }} €</span>
+                                <span id="price-{{ $product->id }}">{{ $product->prix ?? 'Prix non défini' }} €</span>
                                 <!-- Champ de quantité -->
                                 <div class="flex items-center space-x-2">
                                     <input type="number" value="1" min="1" class="w-16 p-2 border border-gray-300 rounded-md text-center" id="quantity-{{ $product->id }}">
@@ -88,7 +89,7 @@
                     <li>
                         <a class="flex flex-col bg-white rounded-lg shadow-lg p-6 w-full">
                             <div class="flex items-center justify-between mb-4">
-                                <p class="text-xl font-semibold text-gray-700">{{ $product->name }}</p>
+                                <p class="text-xl font-semibold text-gray-700" id="name-{{ $product->id }}">{{ $product->name }}</p>
                             </div>
                             <p class="text-sm text-gray-500">{{ $product->description ?? 'Description du produit' }}</p>
                             <div class="mt-4 flex justify-between items-center text-lg font-medium text-gray-700">
@@ -117,7 +118,7 @@
                         <div class="flex flex-col bg-white rounded-lg shadow-lg p-6 w-full">
                             @csrf
                             <div class="flex items-center justify-between mb-4">
-                                <p class="text-xl font-semibold text-gray-700">{{ $product->name }}</p>
+                                <p class="text-xl font-semibold text-gray-700" id="name-{{ $product->id }}">{{ $product->name }}</p>
                             </div>
                             <p class="text-sm text-gray-500">{{ $product->description ?? 'Description du produit' }}</p>
                             <div class="mt-4 flex justify-between items-center text-lg font-medium text-gray-700">
@@ -165,7 +166,7 @@
                     <li>
                         <a class="flex flex-col bg-white rounded-lg shadow-lg p-6 w-full">
                             <div class="flex items-center justify-between mb-4">
-                                <p class="text-xl font-semibold text-gray-700">{{ $product->name }}</p>
+                                <p class="text-xl font-semibold text-gray-700" id="name-{{ $product->id }}">{{ $product->name }}</p>
                             </div>
                             <p class="text-sm text-gray-500">{{ $product->description ?? 'Description du produit' }}</p>
                             <div class="mt-4 flex justify-between items-center text-lg font-medium text-gray-700">
@@ -193,7 +194,7 @@
                     <li>
                         <a class="flex flex-col bg-white rounded-lg shadow-lg p-6 w-full">
                             <div class="flex items-center justify-between mb-4">
-                                <p class="text-xl font-semibold text-gray-700">{{ $product->name }}</p>
+                                <p class="text-xl font-semibold text-gray-700" id="name-{{ $product->id }}">{{ $product->name }}</p>
                             </div>
                             <p class="text-sm text-gray-500">{{ $product->description ?? 'Description du produit' }}</p>
                             <div class="mt-4 flex justify-between items-center text-lg font-medium text-gray-700">
@@ -221,7 +222,7 @@
                     <li>
                         <a class="flex flex-col bg-white rounded-lg shadow-lg p-6 w-full">
                             <div class="flex items-center justify-between mb-4">
-                                <p class="text-xl font-semibold text-gray-700">{{ $product->name }}</p>
+                                <p class="text-xl font-semibold text-gray-700" id="name-{{ $product->id }}">{{ $product->name }}</p>
                             </div>
                             <p class="text-sm text-gray-500">{{ $product->description ?? 'Description du produit' }}</p>
                             <div class="mt-4 flex justify-between items-center text-lg font-medium text-gray-700">

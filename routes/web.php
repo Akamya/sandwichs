@@ -12,7 +12,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/', [AccueilController::class, 'index'])->name('accueil');
-    Route::get('/order', [OrderController::class, 'index'])->name('order');
+    Route::get('/panier', [AccueilController::class, 'show'])->name('panier');
 });
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
