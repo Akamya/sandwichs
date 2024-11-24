@@ -13,6 +13,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/', [AccueilController::class, 'index'])->name('accueil');
     Route::get('/panier', [AccueilController::class, 'show'])->name('panier');
+    Route::post('/valider-commande', [OrderController::class, 'store'])->name('order.store');
 });
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {

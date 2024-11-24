@@ -2,6 +2,14 @@
     <script>
     const userID = @json($userID);
     const panierUserID = `panier-${userID}`;
+    // Récupère les données du localStorage
+    const savedPanier = JSON.parse(localStorage.getItem(panierUserID)) || [];
+    function supprimerElement(productID){
+           const updatedPanier = savedPanier.filter(element => element.productId !== productID);
+           localStorage.setItem(panierUserID, JSON.stringify(updatedPanier));
+        //    console.log(productID);
+           location.reload();
+        }
     function viderPanier(){
         localStorage.removeItem(panierUserID);
         location.reload();
@@ -13,16 +21,49 @@
         const products = {!! json_encode($products) !!}; // Encode les produits en JSON
 
             // console.log(products);
-        // Récupère les données du localStorage
-        const savedPanier = JSON.parse(localStorage.getItem(panierUserID)) || [];
-
-        console.log(savedPanier); // Vérifie les données dans la console
 
         let total = 0;
 
-
         // Fonction pour afficher le panier
         function displayPanier() {
+            // Attache l'événement au bouton
+            const validerCommandeButton = document.querySelector("#valider");
+                    validerCommandeButton.addEventListener("click", function(event) {
+                        validerCommande();
+                    });
+
+                    // Fonction pour valider la commande
+                    function validerCommande() {
+                        console.log('cc');
+                        fetch("{{ route('order.store') }}", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                            },
+                            body: JSON.stringify({
+                                panier: savedPanier,
+                                total: total,
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert("Commande validée avec succès !");
+                                // Optionnellement, vider le panier
+                                localStorage.removeItem(panierUserID);
+                                location.reload();
+                            } else {
+                                alert("Une erreur est survenue lors de la validation de la commande.");
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erreur:', error);
+                            alert("Une erreur est survenue.");
+                        });
+                    }
+
+
             panierElement.innerHTML = ""; // Vide le tableau avant d'ajouter des lignes
             if (savedPanier.length === 0) {
 
@@ -39,7 +80,6 @@
                     }
                     total = total + prix * elementPanier.quantity;
 
-
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td class="px-4 py-2 border">${product.name}</td>
@@ -47,6 +87,9 @@
                         <td class="px-4 py-2 border">${product.categorie || "Non spécifié"}</td>
                         <td class="px-4 py-2 border">${elementPanier.size || ""}</td>
                         <td class="px-4 py-2 border">${elementPanier.quantity}</td>
+                        <td class="px-4 py-2 border">
+                            <button onclick="supprimerElement(${product.id})">Supprimer</button>
+                        </td>
                     `;
                     panierElement.appendChild(row);
                 });
@@ -94,6 +137,7 @@
                                     <th class="px-4 py-2 border">Catégorie</th>
                                     <th class="px-4 py-2 border">Taille</th>
                                     <th class="px-4 py-2 border">Quantité</th>
+                                    <th class="px-4 py-2 border">Action</th>
                                 </tr>
                             </thead>
                             <tbody >
@@ -102,8 +146,7 @@
                             </tbody>
                         </table>
                         <div class="flex  items-center justify-center space-x-8" id="panierTotal" >
-                            <a href="{{ route('products.create') }} "
-                                class="text-gray-500 font-bold py-2 px-4 rounded hover:bg-gray-200 transition">Valider ma commande</a>
+                            <div id="valider" class="text-gray-500 font-bold py-2 px-4 rounded hover:bg-gray-200 transition">Valider ma commande</div>
                         </div>
                     </div>
                 </div>
