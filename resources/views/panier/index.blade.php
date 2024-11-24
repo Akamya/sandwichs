@@ -1,7 +1,9 @@
 <x-app-layout>
     <script>
+    const userID = @json($userID);
+    const panierUserID = `panier-${userID}`;
     function viderPanier(){
-        localStorage.removeItem('panier');
+        localStorage.removeItem(panierUserID);
         location.reload();
     }
     document.addEventListener("DOMContentLoaded", () => {
@@ -10,14 +12,14 @@
 
         const products = {!! json_encode($products) !!}; // Encode les produits en JSON
 
-            // Vérification dans la console
-            console.log(products);
+            // console.log(products);
         // Récupère les données du localStorage
-        const savedPanier = JSON.parse(localStorage.getItem("panier")) || [];
+        const savedPanier = JSON.parse(localStorage.getItem(panierUserID)) || [];
 
         console.log(savedPanier); // Vérifie les données dans la console
 
         let total = 0;
+
 
         // Fonction pour afficher le panier
         function displayPanier() {
@@ -37,6 +39,7 @@
                     }
                     total = total + prix * elementPanier.quantity;
 
+
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td class="px-4 py-2 border">${product.name}</td>
@@ -52,7 +55,7 @@
             // Affiche le total (si besoin)
             panierTotalElement.insertAdjacentHTML(
                 "beforeend",
-                `<p class="text-xl font-semibold">Total : ${total}€</p>`
+                `<p class="text-xl font-semibold">Total : ${total.toFixed(2)}€</p>`
             );
         }
 

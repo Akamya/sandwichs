@@ -14,6 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        // On vérifie que l'utilisateur courant est un administrateur
+        Gate::authorize('viewAny', Product::class);
+
         $products = Product::orderBy('categorie')
         ->orderby('name')
         ->paginate(10)

@@ -28,8 +28,12 @@
                     </a>
                 </div>
                 <div class="flex items-center space-x-4 justify-end">
-                    <a class="font-bold hover:text-emerald-600 transition" href="/">Produits</a>
+                    <a class="font-bold hover:text-emerald-600 transition" href="/profile">Mon profile</a>
                 </div>
+                <div class="flex items-center space-x-4 justify-end">
+                    <a class="font-bold hover:text-emerald-600 transition" href="/panier">Mon panier</a>
+                </div>
+
             </nav>
 
             <main class="mx-4 my-8">

@@ -1,6 +1,8 @@
 <x-guest-layout>
     <script>
-         const panier = JSON.parse(localStorage.getItem("panier")) || [];
+        const userID = @json($userID);
+        const panierUserID = `panier-${userID}`;
+        const panier = JSON.parse(localStorage.getItem(panierUserID)) || [];
 
         function changePrice(size, sandwichID){
             // console.log('sandwichID', sandwichID)
@@ -35,7 +37,7 @@
         }
 
         console.log('panier',panier);
-        localStorage.setItem("panier", JSON.stringify(panier));
+        localStorage.setItem(panierUserID, JSON.stringify(panier));
 
         if(size){
             console.log(`Produit ID ${productId} ajouté avec ${quantity} unités en taille ${size}.`);
@@ -45,9 +47,6 @@
             console.log(`Produit ID ${productId} ajouté avec ${quantity} unités.`);
         }
 
-
-        // Exemple d'envoi vers un panier (ex : via une requête AJAX)
-        // axios.post('/ajouter-au-panier', { id: productId, quantity: quantity });
     }
     </script>
     <h1 class="font-bold text-3xl mb-8 text-center text-gray-800">Liste des produits</h1>
